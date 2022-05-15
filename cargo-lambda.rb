@@ -11,6 +11,8 @@ class CargoLambda < Formula
   end
   license "MIT"
 
+  depends_on "zig"
+
   def install
     bin.install "cargo-lambda"
   end
