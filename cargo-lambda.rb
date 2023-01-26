@@ -3,11 +3,11 @@ class CargoLambda < Formula
   homepage "https://github.com/cargo-lambda/cargo-lambda"
 
   if OS.mac?
-    url "https://github.com/cargo-lambda/cargo-lambda/releases/download/v0.16.0/cargo-lambda-v0.16.0.apple-darwin.tar.gz"
-    sha256 "f1757a76d0a28fee4ebd6d8a76d6331bd18694a900185dd6aab2968d1b485bc9"
+    url "https://github.com/cargo-lambda/cargo-lambda/releases/download/v0.16.1/cargo-lambda-v0.16.1.apple-darwin.tar.gz"
+    sha256 "45d5010a494209336d6d2a4978778d94ae1deba7aa020fa8456bdaffbc2d2c9a"
   else
-    url "https://github.com/cargo-lambda/cargo-lambda/releases/download/v0.16.0/cargo-lambda-v0.16.0.x86_64-unknown-linux-musl.tar.gz"
-    sha256 "e040a075a66b4d5385f96f873e95c399f122ead6dd4c3a4157fa9811e8547145"
+    url "https://github.com/cargo-lambda/cargo-lambda/releases/download/v0.16.1/cargo-lambda-v0.16.1.x86_64-unknown-linux-musl.tar.gz"
+    sha256 "3b539a4b0d4b4a0303520d606649c16078b01b60d292e48544a23eff51d6ccb5"
   end
   license "MIT"
 
