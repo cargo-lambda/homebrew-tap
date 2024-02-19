@@ -1,15 +1,26 @@
 class CargoLambda < Formula
-  desc "cargo-lambda is a Cargo subcommand to help you work with AWS Lambda."
-  homepage "https://github.com/cargo-lambda/cargo-lambda"
+  desc "Cargo Lambda is a Cargo subcommand to help you work with AWS Lambda."
+  homepage "https://www.cargo-lambda.info"
+  head "https://github.com/cargo-lambda/cargo-lambda.git", branch: "main"
+  license "MIT"
 
   if OS.mac?
-    url "<%= @mac_url %>"
-    sha256 "<%= @mac_sha %>"
+    if Hardware::CPU.arm?
+      url "<%= @mac_arm.url %>"
+      sha256 "<%= @mac_arm.sha %>"
+    else
+      url "<%= @mac_intel.url %>"
+      sha256 "<%= @mac_intel.sha %>"
+    end
   else
-    url "<%= @linux_url %>"
-    sha256 "<%= @linux_sha %>"
+    if Hardware::CPU.arm?
+      url "<%= @linux_arm.url %>"
+      sha256 "<%= @linux_arm.sha %>"
+    else
+      url "<%= @linux_intel.url %>"
+      sha256 "<%= @linux_intel.sha %>"
+    end
   end
-  license "MIT"
 
   depends_on "zig"
 

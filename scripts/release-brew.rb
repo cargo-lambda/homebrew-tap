@@ -18,28 +18,28 @@ def fetch(uri_str, limit = 2)
   end
 end
 
-MAC_URL = 'https://github.com/cargo-lambda/cargo-lambda/releases/download/%s/cargo-lambda-%s.apple-darwin.tar.gz'
-LINUX_URL = 'https://github.com/cargo-lambda/cargo-lambda/releases/download/%s/cargo-lambda-%s.x86_64-unknown-linux-musl.tar.gz'
+class Release
+  attr_reader :url, :sha
 
-MAC_SHA_URL = 'https://github.com/cargo-lambda/cargo-lambda/releases/download/%s/cargo-lambda-%s.apple-darwin.tar.gz.sha256'
-LINUX_SHA_URL = 'https://github.com/cargo-lambda/cargo-lambda/releases/download/%s/cargo-lambda-%s.x86_64-unknown-linux-musl.tar.gz.sha256'
+  def initialize(target, version)
+    args = {target: target, version: version}
+    @url = 'https://github.com/cargo-lambda/cargo-lambda/releases/download/%<version>s/cargo-lambda-%<version>s.%<target>s.tar.gz' % args
+    @sha = fetch(@url + '.sha256').body.split(' ')[0]
+  end
+end
 
-filename = 'cargo-lambda.erb'  # @arg1 and @arg2 are used in example.rhtml
+filename = 'cargo-lambda.erb'
 erb = ERB.new(File.read(filename))
 
 version = ARGV[0]
 puts "Upgrading to version #{version}"
 
-@mac_url = MAC_URL % [version, version]
-@linux_url = LINUX_URL % [version, version]
+@mac_intel = Release::new('x86_64-apple-darwin', version)
+@mac_arm = Release::new('aarch64-apple-darwin', version)
 
-mac_sha_url = MAC_SHA_URL % [version, version]
-linux_sha_url = LINUX_SHA_URL % [version, version]
-
-@mac_sha = fetch(mac_sha_url).body.split(' ')[0]
-@linux_sha = fetch(linux_sha_url).body.split(' ')[0]
+@linux_intel = Release::new('x86_64-unknown-linux-musl', version)
+@linux_arm = Release::new('aarch64-unknown-linux-musl', version)
 
 result = erb.result(binding)
 
 File.write('cargo-lambda.rb', result)
-
