@@ -6,19 +6,19 @@ class CargoLambda < Formula
 
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/cargo-lambda/cargo-lambda/releases/download/v1.3.0/cargo-lambda-v1.3.0.aarch64-apple-darwin.tar.gz"
-      sha256 "8cd1d176a690d5b3704fae9c58e0e949e481e79eaa24cb5338f5cdfcf564ca05"
+      url "https://github.com/cargo-lambda/cargo-lambda/releases/download/v1.4.0/cargo-lambda-v1.4.0.aarch64-apple-darwin.tar.gz"
+      sha256 "ef1a8f5521d1d4d0f08b3de6149c48455395aec7328d7587abcdab83f80d736b"
     else
-      url "https://github.com/cargo-lambda/cargo-lambda/releases/download/v1.3.0/cargo-lambda-v1.3.0.x86_64-apple-darwin.tar.gz"
-      sha256 "49043e568b1d1817b0d7e14b7bd23d0938f37b5a951ad6dbd08e8057a1e2e60b"
+      url "https://github.com/cargo-lambda/cargo-lambda/releases/download/v1.4.0/cargo-lambda-v1.4.0.x86_64-apple-darwin.tar.gz"
+      sha256 "9c2a9e5427c1de759970d8d51efd50ec2a435ae348804cb4a660f1c3b9b43b16"
     end
   else
     if Hardware::CPU.arm?
-      url "https://github.com/cargo-lambda/cargo-lambda/releases/download/v1.3.0/cargo-lambda-v1.3.0.aarch64-unknown-linux-musl.tar.gz"
-      sha256 "6e1f434d70a60180d80f6e61f0fd50272a0e849d5bfa7c64d8df066f85881627"
+      url "https://github.com/cargo-lambda/cargo-lambda/releases/download/v1.4.0/cargo-lambda-v1.4.0.aarch64-unknown-linux-musl.tar.gz"
+      sha256 "5cbb3e1291d4c20a5e988eb690a5153f86be44a2fd6bec6485d00ef1e1aa13aa"
     else
-      url "https://github.com/cargo-lambda/cargo-lambda/releases/download/v1.3.0/cargo-lambda-v1.3.0.x86_64-unknown-linux-musl.tar.gz"
-      sha256 "b96973d035b328413fd2a98881f01ab8de8dcaef56c6f826d05dee48925b340f"
+      url "https://github.com/cargo-lambda/cargo-lambda/releases/download/v1.4.0/cargo-lambda-v1.4.0.x86_64-unknown-linux-musl.tar.gz"
+      sha256 "9ce70414d822e3b901403d63598581d2a35b7e16b1e2009308da0b120cb2f280"
     end
   end
 
