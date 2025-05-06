@@ -6,19 +6,19 @@ class CargoLambda < Formula
 
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/cargo-lambda/cargo-lambda/releases/download/v1.8.4/cargo-lambda-v1.8.4.aarch64-apple-darwin.tar.gz"
-      sha256 "db6006e02ed008ed298e267d9407e08d3c92f207b6a8be24d997bbd98540e203"
+      url "https://github.com/cargo-lambda/cargo-lambda/releases/download/v1.8.5/cargo-lambda-v1.8.5.aarch64-apple-darwin.tar.gz"
+      sha256 "88847c5c24c15762fcc657cb4d8a809535361e361dc1e159733377f49692f86a"
     else
-      url "https://github.com/cargo-lambda/cargo-lambda/releases/download/v1.8.4/cargo-lambda-v1.8.4.x86_64-apple-darwin.tar.gz"
-      sha256 "0fed37fa41e680ffbc12606f7c93ae7813d7866a53d264ce5f5986b884c8f2ac"
+      url "https://github.com/cargo-lambda/cargo-lambda/releases/download/v1.8.5/cargo-lambda-v1.8.5.x86_64-apple-darwin.tar.gz"
+      sha256 "813aca0784da967ce8745953717e38ad2e512999c276d0b6764c9092f4a7a5ac"
     end
   else
     if Hardware::CPU.arm?
-      url "https://github.com/cargo-lambda/cargo-lambda/releases/download/v1.8.4/cargo-lambda-v1.8.4.aarch64-unknown-linux-musl.tar.gz"
-      sha256 "d6b5b7cbb6d6f0b4be7f2be3cab2598a60ea9c58a0f80496d9cb0e020511b128"
+      url "https://github.com/cargo-lambda/cargo-lambda/releases/download/v1.8.5/cargo-lambda-v1.8.5.aarch64-unknown-linux-musl.tar.gz"
+      sha256 "c68117e4669724a813f0d30e923869cb11d52d1d31b0452fc81662be474c5c9e"
     else
-      url "https://github.com/cargo-lambda/cargo-lambda/releases/download/v1.8.4/cargo-lambda-v1.8.4.x86_64-unknown-linux-musl.tar.gz"
-      sha256 "97a743fce803b331cc1e38d9a05cd2455233b24d697798448d0d00ec53c45074"
+      url "https://github.com/cargo-lambda/cargo-lambda/releases/download/v1.8.5/cargo-lambda-v1.8.5.x86_64-unknown-linux-musl.tar.gz"
+      sha256 "c85abcef098b2add55fcbf44b1287663bae26773dd1e900fb2d99b1f8d8453af"
     end
   end
 
